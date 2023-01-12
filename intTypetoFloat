@@ -1,0 +1,22 @@
+package main
+
+// this fmt package used to display the outputs 
+import(
+"fmt"
+)
+
+
+// main function like every other prog. language 
+func main() {
+
+// declaring a variable of int type named i
+var i int = 42
+fmt.Printf("%v, %T\n", i , i)
+
+
+// converting the same variable into an float
+var j float32 = float32(i)
+fmt.Printf("%v, %T\n", j, j)
+
+
+}
