@@ -1,0 +1,52 @@
+package main
+
+import "fmt"
+
+type Passenger struct {
+	Name         string
+	TicketNumber int
+	Boarded      bool
+}
+
+type Bus struct {
+	FrontSeat Passenger
+}
+
+func main() {
+	fmt.Println("Hello Maderchod")
+
+	// initialising casey as  passenger type
+	casey := Passenger{"Casey", 1, false}
+	fmt.Println(casey)
+
+	// doing the same thing initialising two variables with diff method
+	var (
+		bill = Passenger{Name: "Bill", TicketNumber: 2}
+		ella = Passenger{Name: "Ella", TicketNumber: 3}
+	)
+	fmt.Println(bill, "\n", ella)
+
+	// here doing the also same thing
+	var heidi Passenger
+
+	heidi.Name = "Heidi"
+	heidi.TicketNumber = 4
+	fmt.Println(heidi)
+
+	// declaring casey's and bill's boarding status
+	casey.Boarded = true
+	bill.Boarded = true
+
+	if bill.Boarded {
+		fmt.Println("Bill has boarded the bus ")
+	}
+	if casey.Boarded {
+		fmt.Println("casey has boarded the bus ")
+	}
+
+	heidi.Boarded = true
+	bus := Bus{heidi}
+	fmt.Println(bus)
+	fmt.Println(bus.FrontSeat.Name, "is in the front seat")
+
+}
